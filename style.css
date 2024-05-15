@@ -128,14 +128,14 @@ h4 span{
 
 .computer img {
     border-radius: 10px;
-    width: 250px;
+    width: 350px;
     transition: width 0.4s ease-in-out; 
     animation: fadeIn 3s ease-in; 
     
 }
 
 .computer img:hover {
-    width: 270px; 
+    width: 370px; 
 }
 
 .computer img.initial {
