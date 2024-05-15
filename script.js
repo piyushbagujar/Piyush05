@@ -90,10 +90,34 @@ function circleChaptaKaro() {
       });
     });
   });
+  firstpageani();  
+  window.addEventListener('load', function() {
+    // After page is fully loaded, add 'initial' class to trigger the animation
+    document.querySelector('.computer img').classList.add('initial');
+});
+const elems = document.querySelectorAll('.elem');
+
+function handleMouseEnter(e) {
+    const elem = e.currentTarget;
+    elem.classList.add('fade-out');
+    elem.querySelector('img').style.opacity = 1;
+}
+
+function handleMouseLeave(e) {
+    const elem = e.currentTarget;
+    elem.classList.remove('fade-out');
+    elem.querySelector('img').style.opacity = 0;
+}
+
+elems.forEach(function(elem) {
+    elem.addEventListener('mouseenter', handleMouseEnter);
+    elem.addEventListener('mouseleave', handleMouseLeave);
+});
 
 
 
 
 
-firstpageani();  
+
+
 
