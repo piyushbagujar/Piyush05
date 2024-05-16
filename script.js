@@ -15,15 +15,15 @@ function firstpageani() {
         .to(".anielem", {
             y: -1,
             ease: "expo.inOut", 
-            duration: 1.5,
-            delay:- 0.2,
-            stagger:0.1
+            duration: 10,
+            delay: 0.2,
+            stagger: 0.1
     })
     .from("#herofooter", {
         y: -10,
         opacity: 0,
-        duration: 1,
-        delay: -0.5,
+        duration: 1.1,
+        delay: -1,
         ease: "expo.inOut" 
     })
 }
@@ -52,18 +52,17 @@ function circleChaptaKaro() {
         ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(1, 1)`;
       }, 100);
     });
-  }
+}
   
-  function circleMouseFollower(xscale, yscale) {
+function circleMouseFollower(xscale, yscale) {
     window.addEventListener("mousemove", function (dets) {
       document.querySelector(
         "#minicircle"
       ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
     });
-  }
+}
+function rotatekaro(){
   
-  circleChaptaKaro();
-  circleMouseFollower()
 
   document.querySelectorAll(".elem").forEach(function (elem) {
     var rotate = 0;
@@ -86,34 +85,44 @@ function circleChaptaKaro() {
         ease: Power3,
         top: diff,
         left: dets.clientX,
-        rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
+        rotate: gsap.utils.clamp(-15, 15, diffrot * 0.5),
       });
     });
   });
-  firstpageani();  
-  window.addEventListener('load', function() {
+}
+function imgregarding(){
+  indow.addEventListener('load', function() {
     // After page is fully loaded, add 'initial' class to trigger the animation
     document.querySelector('.computer img').classList.add('initial');
-});
-const elems = document.querySelectorAll('.elem');
-
-function handleMouseEnter(e) {
+  });
+  const elems = document.querySelectorAll('.elem');
+  
+  function handleMouseEnter(e) {
     const elem = e.currentTarget;
     elem.classList.add('fade-out');
-    elem.querySelector('img').style.opacity = 1;
-}
-
-function handleMouseLeave(e) {
+    elem.querySelector('img').style.opacity = 9999;
+  }
+  
+  function handleMouseLeave(e) {
     const elem = e.currentTarget;
     elem.classList.remove('fade-out');
     elem.querySelector('img').style.opacity = 0;
-}
-
-elems.forEach(function(elem) {
+  }
+  
+  elems.forEach(function(elem) {
     elem.addEventListener('mouseenter', handleMouseEnter);
     elem.addEventListener('mouseleave', handleMouseLeave);
-});
-
+  });
+}
+var loader= document.querySelector("#loader")
+setTimeout(function(){
+  loader.style.top="-100%"
+},5200)
+circleChaptaKaro();
+circleMouseFollower()
+rotatekaro()
+firstpageani()  
+imgregarding();
 
 
 
