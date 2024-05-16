@@ -34,13 +34,17 @@ body {
 html,body{
     width: 100%;
     height: 100%;
+    background-color: black;
 }
 #main{
     width: 100%;
+    position: relative;
+    z-index: 100;
+    
 }
 #hero{
     color: rgb(217, 207, 207);
-    color: rgb(217, 207, 207);
+    
     width: 100%;
     height: 100%;
     width: 100%;
@@ -272,18 +276,20 @@ h4 span{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 7;
+    transition: opacity 0.1s linear;
+    
 }
 
 .elem.fade-out img {
     opacity: 2;
+
 }
 
 /* Additional styling for the text */
 .elem h1 {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     transition: color 0.3s ease;
 }
 
@@ -295,7 +301,7 @@ h4 span{
     opacity: 0;
     pointer-events: none;
     height: 25vw;
-    z-index: 1;
+    z-index: 9999;
     position: absolute;
     transform: translate(-50%, -50%);
    
@@ -349,6 +355,11 @@ h4 span{
     cursor: pointer;
     
 }
+#subdiv1{
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+}
 #sub1{
     padding: 0px 26px;
     margin-left: -22px;
@@ -386,9 +397,144 @@ h4 span{
     font-size: 10px;
 
 }
+#loader {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(17, 16, 16);
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    transition: all ease 0.5s;
+}
 
-/* animation part  */
+#loader h1 {
+    font-size: 16vw;
+    color: transparent;
+    background: linear-gradient(to right, rgb(243, 246, 243), rgba(240, 244, 243, 0.608));
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    display: none;
+    animation-name: load;
+    animation-duration: 1s; 
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
 
+#loader h1:nth-child(1) {
+
+   animation-delay: 2.2s;
+    display: block;
+}
+#loader h1:nth-child(2){
+    display: block;
+    animation-delay: 3.9s;
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+#lastpage{
+    width: 100%;
+    height: 60vh;
+    
+
+    
+}
+.circles{
+    position: static;
+    width: 63%;
+    height: 19%;
+    right: 0;
+    top: 0;
+    z-index: 300;
+   
+}
+.circles1{
+    position: absolute;
+    width: 61%;
+    background-color: orangered;
+    height: 71%;
+    border-radius: 45%;
+    right: 0;
+     animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    filter: blur(25px);
+    z-index: 300;
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+.circles2{
+    position: absolute;
+    width: 65%;
+    background-color: orangered;
+    height: 82%;
+    right: 20%;
+    border-radius: 50%;
+    filter: blur(15px);
+    animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    filter: blur(25px);
+    z-index: 300;
+}
+.circles3{
+    position: absolute;
+    width: 55%;
+    background-color: orangered;
+    height: 67%;
+    border-radius: 48%;
+    z-index: 300;
+
+    filter: blur(15px);
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#lastfooter{
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    height: 57vh;
+    display: flex;
+    align-items: flex-end;
+    bottom: 0;
+    background-color: #0e0d0d;
+    padding: 1vw 2vw;
+    padding-left: 10vw;
+}
+#lastfooter a{
+    color: #f9f8f8;
+    text-decoration: none;
+    font-size: 20vw;
+    z-index: 100000000;
+}
+/* //////////////////////////////////////////////////////animation part ////////////////////////////////////////////////////////////////////////////// */
  .nav1 h4::after{
     content: "";
     position: absolute;
@@ -405,4 +551,24 @@ h4 span{
 }  
 .nav1 h4:hover a{
     color: rgb(2, 2, 2);
+
+}
+@keyframes anime1 {
+    from {
+        transform: translate(10%, 6%);
+    }
+
+    to {
+        transform: translate(1%, 20%);
+    }
+}
+
+@keyframes anime2 {
+    from {
+        transform: translate(54%, 5%);
+    }
+
+    to {
+        transform: translate(20%, 30%);
+    }
 }
