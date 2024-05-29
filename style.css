@@ -8,8 +8,8 @@
 }
 #minicircle{
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color:white;
     z-index: 99999;
@@ -35,11 +35,13 @@ html,body{
     width: 100%;
     height: 100%;
     background-color: black;
+    overflow-x: hidden;
 }
 #main{
     width: 100%;
-    position: relative;
+    position: absolute;
     z-index: 100;
+    
     
 }
 #hero{
@@ -93,8 +95,9 @@ h4 span{
     z-index: 9;
 }
 #nav img {
-    width: 16vw;
+    width: 8vw;
 }
+
 #heading{
     padding: 20px 10px;
     display: flex;
@@ -106,7 +109,7 @@ h4 span{
     font-size: 8vw;
     font-weight: 900;
     margin-left: 48px;
-    color: rgb(217, 207, 207);
+    color: rgb(192, 182, 182);
     
 }
 /* #heading h1:not(:has(span)) {
@@ -132,14 +135,14 @@ h4 span{
 
 .computer img {
     border-radius: 10px;
-    width: 350px;
+    width: 550px;
     transition: width 0.4s ease-in-out; 
     animation: fadeIn 3s ease-in; 
     
 }
 
 .computer img:hover {
-    width: 370px; 
+    width: 570px; 
 }
 
 .computer img.initial {
@@ -147,7 +150,7 @@ h4 span{
 }
 
 #heading .anielem:nth-child(1) span {
-    color: rgb(15, 250, 3);
+    color: rgb(31, 209, 22);
 }
 
 #heading .anielem:nth-child(2) span {
@@ -345,8 +348,8 @@ h4 span{
     text-decoration: none;
 }
 .box1{
-    width: 60px;
-    height: 18px;
+        width: 74px;
+    height: 26px;
     display: flex;
     background-color: rgb(6, 251, 55);
     justify-content: center;
@@ -413,7 +416,7 @@ h4 span{
 #loader h1 {
     font-size: 16vw;
     color: transparent;
-    background: linear-gradient(to right, rgb(243, 246, 243), rgba(240, 244, 243, 0.608));
+    background: linear-gradient(to right, rgb(1, 246, 17), rgba(3, 251, 123, 0.608));
     -webkit-background-clip: text;
     position: absolute;
     opacity: 0;
@@ -524,7 +527,7 @@ h4 span{
     display: flex;
     align-items: flex-end;
     bottom: 0;
-    background-color: #0e0d0d;
+    background-color: #1c1b1bbf;
     padding: 1vw 2vw;
     padding-left: 10vw;
 }
@@ -572,3 +575,12 @@ h4 span{
         transform: translate(20%, 30%);
     }
 }
+/* #loadmenu{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(134, 127, 127, 0.984);
+    position: absolute;
+    top: -100%;
+    z-index: 999;
+    transition: ease 0.8s;
+} */
